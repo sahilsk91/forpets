@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart | FORPETS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="top-header">
+    <nav class="navbar">
+      <div class="logo">FORPETS</div>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="product.html">Products</a>
+        </li>
+        <li id="userMenu" style="display:none;">
+          <div class="profile" onclick="toggleDropdown()">
+            👤 <span id="userName"></span>
+          </div>
+
+          <div class="dropdown" id="dropdownMenu">
+            <a href="orderHistory.html" class="orderHistory">📦 Order History</a>
+            <a href="dashboard.html" id="dashboardLink" style="display:none;">📊 Dashboard</a>
+            <button onclick="logout()">🚪 Logout</button>
+          </div>
+        </li>
+        <li>
+          <a href="login.html" id="loginLink">Login / Register</a>
+        </li>
+        <li id="cartItem">
+          <a href="cart.html" class="cart-link">
+            <div class="cart">🛒</div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <h2 style="text-align:center; margin-top:20px;">🛒 Your Cart</h2>
+
+  <div class="cart-container">
+
+    <div class="cart-header">
+      <div>Product</div>
+      <div>Price</div>
+      <div>Quantity</div>
+      <div>Total</div>
+      <div>Action</div>
+    </div>
+
+    <div id="cartList">
+      <!-- Items inserted by cart.js -->
+    </div>
+
+    <div class="cart-total">
+      Grand Total: ₹<span id="grandTotal">0</span>
+    </div>
+
+    <button class="checkout-btn" onclick="goToCheckout()">
+      Proceed to Checkout
+    </button>
+
+
+  </div>
+
+  <footer class="premiumFooter">
+
+  <div class="footerContainer">
+
+    <!-- BRAND -->
+    <div class="footerCol">
+      <h2 class="footerLogo">FORPETS</h2>
+      <p>Your trusted online pet store for food, toys & accessories.  
+      Quality products for happy pets 🐾</p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footerCol">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="footerCol">
+      <h3>Categories</h3>
+      <ul>
+        <li>Dog Food</li>
+        <li>Cat Food</li>
+        <li>Bird Food</li>
+        <li>Fish Food</li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footerCol">
+      <h3>Contact</h3>
+      <p>Email: support@forpets.com</p>
+      <p>Phone: +91 98765 43210</p>
+      <p>Mumbai, India</p>
+
+      <div class="socialIcons">
+        <span>🌐</span>
+        <span>📘</span>
+        <span>📷</span>
+        <span>🐦</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footerBottom">
+    © 2026 FORPETS. All rights reserved.
+  </div>
+
+</footer>
+
+
+  <!-- toast message -->
+  <div id="toast" class="toast"></div>
+
+  <script src="js/cart.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/login.js"></script>
+
+
+</body>
+
+</html>

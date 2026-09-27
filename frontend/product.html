@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- ================= HEADER ================= -->
+  <header class="top-header">
+    <nav class="navbar">
+      <div class="logo">FORPETS</div>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="product.html">Products</a>
+        </li>
+        <li id="userMenu" style="display:none;">
+          <div class="profile" onclick="toggleDropdown()">
+            👤 <span id="userName"></span>
+          </div>
+
+          <div class="dropdown" id="dropdownMenu">
+            <a href="orderHistory.html" class="orderHistory">📦 Order History</a>
+            <a href="dashboard.html" id="dashboardLink" style="display:none;">📊 Dashboard</a>
+            <button onclick="logout()">🚪 Logout</button>
+          </div>
+        </li>
+
+        <li>
+          <a href="login.html" id="loginLink">Login / Register</a>
+        </li>
+        <li id="cartItem">
+          <a href="cart.html" class="cart-link">
+            <div class="cart">🛒</div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+ <div class="premiumCategories">
+
+  <div class="categoryCard filter-btn active" data-category="all">
+    <img src="images/allFilter.jpg">
+    <span>All Products</span>
+  </div>
+
+  <div class="categoryCard filter-btn" data-category="dog">
+    <img src="images/Gemini_Generated_Image_uqgtkcuqgtkcuqgt.png">
+    <span>Dogs</span>
+  </div>
+
+  <div class="categoryCard filter-btn" data-category="cat">
+    <img src="images/Gemini_Generated_Image_j8gf38j8gf38j8gf.png">
+    <span>Cats</span>
+  </div>
+
+  <div class="categoryCard filter-btn" data-category="bird">
+    <img src="images/Gemini_Generated_Image_q73d9yq73d9yq73d.png">
+    <span>Birds</span>
+  </div>
+
+  <div class="categoryCard filter-btn" data-category="fish">
+    <img src="images/Gemini_Generated_Image_giylfugiylfugiyl.png">
+    <span>Fish</span>
+  </div>
+
+</div>
+
+
+  <!-- products container-->
+  <section id="products">
+    <!-- products -->
+  </section>
+
+  <!-- toast message -->
+  <div id="toast" class="toast"></div>
+
+  <script src="js/product.js"></script>
+  <script src="js/navbar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout | FORPETS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="checkout-container">
+
+        <h2>Checkout</h2>
+
+        <!-- Address Section -->
+        <div class="checkout-box">
+            <h3>Shipping Address</h3>
+            <input id="fullName" type="text" placeholder="Full Name">
+            <input id="phone" type="text" placeholder="Phone Number">
+            <input id="address" type="text" placeholder="Address">
+            <input id="city" type="text" placeholder="City">
+            <input id="pincode" type="text" placeholder="Pincode">
+        </div>
+
+        <!-- Payment Section -->
+        <div class="checkout-box">
+            <h3>Payment Method</h3>
+
+            <div class="paymentMethods">
+                <div class="cod paymentMethod">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" checked>
+                        Cash on Delivery (COD)
+                    </label>
+                </div>
+
+                <div class="razorpay paymentMethod">
+                    <label class="payment-option">
+                        <input type="radio" name="payment">
+                        Razorpay (Card / UPI / Netbanking)
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Order Summary -->
+        <div class="checkout-box summary">
+            <h3>Order Summary</h3>
+            <div id="summaryItems"></div>
+            <p><strong>Grand Total:</strong> ₹<span id="totalAmount">0</span></p>
+        </div>
+
+
+        <button class="place-order-btn" onclick="placeOrder()">
+            Place Order
+        </button>
+    </div>
+
+    <!-- toast message -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/checkout.js"></script>
+</body>
+
+</html>

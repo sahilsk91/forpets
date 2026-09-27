@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Register | FORPETS</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <div class="auth-container">
+    <h2>Create FORPETS Account</h2>
+
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="email" id="email" placeholder="Enter Gmail address">
+    <input type="password" id="password" placeholder="Create password">
+
+    <button onclick="register()">Register</button>
+
+    <p style="margin-top: 15px;">
+      Already have an account?
+      <a href="login.html" style="color:#1a45e5; font-weight:bold;">
+        Login here
+      </a>
+    </p>
+  </div>
+
+  <!-- toast message -->
+  <div id="toast" class="toast"></div>
+
+  <script src="js/login.js"></script>
+</body>
+
+</html>

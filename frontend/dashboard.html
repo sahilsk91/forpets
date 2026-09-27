@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard | FORPETS</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Chart.js for graphs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    .dashboard-container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 16px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-card h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #ff8c42;
+    }
+
+    .stat-card p {
+      margin: 6px 0 0;
+      color: #777;
+      font-size: 14px;
+    }
+
+    .dash-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      margin-bottom: 24px;
+    }
+
+    .dash-card h3 {
+      margin-top: 0;
+    }
+
+    .charts-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 800px) {
+      .charts-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hot-badge {
+      display: inline-block;
+      background: #ffe8de;
+      color: #e0561d;
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 13px;
+      margin: 4px 6px 4px 0;
+    }
+
+    table.admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    table.admin-table th,
+    table.admin-table td {
+      padding: 10px 8px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    table.admin-table th {
+      background: #f9f9f9;
+    }
+
+    .status-select {
+      padding: 6px 8px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    .status-select.saved {
+      border-color: #1c9c54;
+      color: #1c9c54;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="top-header">
+    <nav class="navbar">
+      <div class="logo">FORPETS</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li id="userMenu" style="display:none;">
+          <div class="profile" onclick="toggleDropdown()">
+            👤 <span id="userName"></span>
+          </div>
+          <div class="dropdown" id="dropdownMenu">
+            <a href="orderHistory.html" class="orderHistory">📦 Order History</a>
+            <a href="dashboard.html" id="dashboardLink" style="display:none;">📊 Dashboard</a>
+            <button onclick="logout()">🚪 Logout</button>
+          </div>
+        </li>
+        <li><a href="login.html" id="loginLink">Login / Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h2 style="text-align:center;margin-top:20px;">📊 Admin Dashboard</h2>
+
+  <div class="dashboard-container" id="dashboardApp">
+
+    <!-- summary cards -->
+    <div class="stat-grid" id="statCards"></div>
+
+    <!-- hot selling alert -->
+    <div class="dash-card" id="hotSellingCard" style="display:none;">
+      <h3>🔥 Selling Too Much (Watch Your Stock!)</h3>
+      <div id="hotSellingList"></div>
+    </div>
+
+    <!-- charts -->
+    <div class="charts-row">
+      <div class="dash-card">
+        <h3>🏆 Top Selling Products</h3>
+        <canvas id="topProductsChart"></canvas>
+      </div>
+      <div class="dash-card">
+        <h3>💰 Revenue — Last 7 Days</h3>
+        <canvas id="revenueChart"></canvas>
+      </div>
+    </div>
+
+    <!-- order management -->
+    <div class="dash-card">
+      <h3>📦 Manage Orders <span style="color:#999;font-weight:normal;font-size:13px;">(updating status emails the customer)</span></h3>
+      <div style="overflow-x:auto;">
+        <table class="admin-table" id="ordersTable">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Items</th>
+              <th>Total</th>
+              <th>Shipping</th>
+              <th>Status</th>
+              <th>Update</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- toast message -->
+  <div id="toast" class="toast"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+
+</html>

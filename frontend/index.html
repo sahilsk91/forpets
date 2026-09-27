@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FORPETS | Pet Food Store</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <!-- header -->
+  <header class="top-header">
+    <nav class="navbar">
+      <div class="logo">FORPETS</div>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="product.html">Products</a>
+        </li>
+        <li id="userMenu" style="display:none;">
+          <div class="profile" onclick="toggleDropdown()">
+            👤 <span id="userName"></span>
+          </div>
+
+          <div class="dropdown" id="dropdownMenu">
+            <a href="orderHistory.html" class="orderHistory">📦 Order History</a>
+            <a href="dashboard.html" id="dashboardLink" style="display:none;">📊 Dashboard</a>
+            <button onclick="logout()">🚪 Logout</button>
+          </div>
+        </li>
+        <li>
+          <a href="login.html" id="loginLink">Login / Register</a>
+        </li>
+        <li id="cartItem">
+          <a href="cart.html" class="cart-link">
+            <div class="cart">🛒</div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= HERO BANNER ================= -->
+  <section class="hero-banner">
+    <div class="banner-content">
+      <h1>Playtime<br><span>ALL THE TIME!</span></h1>
+      <p>Premium food, treats & toys for your pets</p>
+      <button>
+        <a href="product.html">SHOP NOW</a>
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="features">
+    <div class="feature-box">✔ 100% Genuine Products</div>
+    <div class="feature-box">🚚 Fast Delivery</div>
+    <div class="feature-box">💳 Secure Payments</div>
+  </section>
+
+  <footer class="premiumFooter">
+
+    <div class="footerContainer">
+
+      <!-- BRAND -->
+      <div class="footerCol">
+        <h2 class="footerLogo">FORPETS</h2>
+        <p>Your trusted online pet store for food, toys & accessories.
+          Quality products for happy pets 🐾</p>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div class="footerCol">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+
+      <!-- CATEGORIES -->
+      <div class="footerCol">
+        <h3>Categories</h3>
+        <ul>
+          <li>Dog Food</li>
+          <li>Cat Food</li>
+          <li>Bird Food</li>
+          <li>Fish Food</li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="footerCol">
+        <h3>Contact</h3>
+        <p>Email: support@forpets.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Mumbai, India</p>
+
+        <div class="socialIcons">
+          <span>🌐</span>
+          <span>📘</span>
+          <span>📷</span>
+          <span>🐦</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footerBottom">
+      © 2026 FORPETS. All rights reserved.
+    </div>
+
+  </footer>
+
+
+  <!-- toast message -->
+  <div id="toast" class="toast"></div>
+
+  <script src="js/navbar.js"></script>
+
+</body>
+
+</html>
